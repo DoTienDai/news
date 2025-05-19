@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container news-article">
+    @if (article) {
+    <h2 class="article-title">{{article.title}}</h2>
+    <div class="article-info-writer">
+        <p class="article-author">Tác giả: {{article.author}}</p>
+        <span class="article-date">Ngày xuất bản: {{article.publishedAt | date:
+            'medium'
+            }}</span>
+    </div>
+    <p class="article-description">{{article.description}}</p>
+    @if (article.urlToImage) {
+    <img [src]="article.urlToImage" [alt]="article.title" class="article-image"> }@else {
+    <img src="/assets/images/error404.png" [alt]="article.title" class="article-image"> }
+    <a [href]="article.url" class="article-reference">Có thể xem bài
+        viết tại đây</a> }@else {
+    <p>No article available data</p>
+    }
+
+    <div class="news-info-container">
+        <h2 class="heading-related">Các bài liên quan</h2>
+        <div class="container-slider">
+            <div class="slide" #slideContainer>
+                @for (article of articles.slice(0, 6); track $index) {
+                <div class="item-content" [style.background-image]="'url(' + article.urlToImage + ')'">
+                    <div class="content">
+                        <div class="name">{{article.author | truncate: 20}}
+                        </div>
+                        <div class="des">{{article.description | truncate: 75}}
+                        </div>
+                        <button (click)="viewArticle(article)">View now</button>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="button">
+                <button class="prev"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <button class="next"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+</div>

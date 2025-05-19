@@ -1,0 +1,144 @@
+.top-branch-name {
+    font-size: 42px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.top-nav-search {
+    position: relative;
+    .top-icon-search {
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        top: 25%;
+    }
+    input {
+        border: none;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        height: 35px;
+        width: 270px;
+        padding: 8px;
+        border-radius: 9px;
+        background-color: #fff;
+        color: #444;
+    }
+    .list-search {
+        position: absolute;
+        width: 270px;
+        top: 35px;
+        left: 0;
+        overflow: auto;
+        max-height: 350px;
+        z-index: 100;
+    }
+}
+
+.list-group-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.95;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    .item-title {
+        font-size: 14px;
+        margin-left: 6px;
+    }
+}
+
+.top-nav-select {
+    width: 250px;
+    height: 40px;
+    border-radius: 9px;
+    color: #444;
+    padding: 6px;
+    background-color: #fff;
+}
+
+.header-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background-color: #40b2dc;
+}
+
+.navbar-categories {
+    margin-top: 16px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #f8f2f2;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255);
+    font-weight: 700;
+    margin-left: 12px;
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-bottom: 2px solid #40b2dc;
+    padding: 12px;
+}
+
+.nav-link-item {
+    color: #555;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+        color: #40b2dc;
+        background-color: #fff;
+    }
+}
+
+.nav-link-item.active {
+    color: #40b2dc;
+    background-color: #fff;
+    font-weight: 500;
+}
+
+.icon-toggle-dark {
+    color: #fff;
+    cursor: pointer;
+}
+
+// ========================= MEDIA QUERY =============================
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .top-nav-search {
+        margin-top: 10px;
+    }
+}
